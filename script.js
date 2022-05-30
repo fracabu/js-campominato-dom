@@ -42,10 +42,17 @@ function generateGrid (){
 function renderGrid (totCells, bombsList){
     const gridContainer=document.querySelector(".grid-container");
     // Ciclo per creare il numero di celle previsto
-    for (let i = 0; i < totCells; i++){
+    for (let i = 1; i <= totCells; i++){
         //creo una cella html
         const cell = document.createElement('div');
         cell.classList.add('cell');
+        //numero progressivo celle
+        cell.textContent = i;
+        //eventListener al click sulla cella
+        cell.addEventListener("click", function(){
+            console.log("cliccato cella" + i);
+
+        })
 
         //aggiungo la cella alla griglia
         gridContainer.append(cell);
