@@ -1,0 +1,23 @@
+:root{
+    --cell-size: 30px;
+}
+
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(var(--cell-size) * 8);
+    height: calc(var(--cell-size) * 8);
+    box-shadow: inset;
+}
+
+
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-color: #7a787b #7a787b;
+    border-width: 1px;
+    border-style: solid;
+
+}

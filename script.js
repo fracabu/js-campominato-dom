@@ -53,3 +53,5 @@ function renderGrid (totCells, bombsList){
     }
 
 }
+
+generateGrid();
