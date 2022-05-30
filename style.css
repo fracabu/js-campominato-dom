@@ -3,7 +3,9 @@
 }
 
 
+
 .grid-container {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     width: calc(var(--cell-size) * 8);
@@ -16,8 +18,16 @@
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    border-color: #7a787b #7a787b;
+    border-color: #7a787b;
     border-width: 1px;
     border-style: solid;
 
+}
+
+.cell.bomb{
+    background-color: red;
+}
+
+.cell.no-bomb{
+    background-color: blue;
 }

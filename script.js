@@ -23,16 +23,32 @@
 
 //Genera un array con numeri random unici
 
-function generateBombsList(){
+function generateBombsList(maxNumber){
+    const bombsList = [];
 
+    do{
+        const randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+        if(!bombsList.includes(randomNumber)){
+            bombsList.push(randomNumber);
+        }
+    }
+
+    while(bombsList.length <16);{
+        
+
+        return bombsList;
+    }
 }
 
 
 // matematica e logica per far funzionare la griglia
 
 function generateGrid (){
+    //numero di celle
     const totCells = 8 * 8;
-    const bombsList = generateBombsList();
+    //lista con le bombe ad ogni bombe corrisponde il numero dell'array (generateBombsList)
+    const bombsList = generateBombsList(totCells);
+    console.log(bombsList);
 
     renderGrid(totCells, bombsList)
 }
@@ -47,10 +63,23 @@ function renderGrid (totCells, bombsList){
         const cell = document.createElement('div');
         cell.classList.add('cell');
         //numero progressivo celle
-        cell.textContent = i;
+        //cell.textContent = i;
+        //creo un attributo "data-indice" custom che conterrà il numero della cella
+        cell.dataset.indice = i;
+
+    
         //eventListener al click sulla cella
         cell.addEventListener("click", function(){
+            const cellIndex = parseInt(this.dataset.indice);
             console.log("cliccato cella" + i);
+
+            //controllo se il numero della cella cliccata fa parte della lista bombe
+            if(bombsList.includes(cellIndex)){
+                cell.classList.add("bomb");
+            }
+            else{
+                cell.classList.add("no-bomb");
+            }
 
         })
 
