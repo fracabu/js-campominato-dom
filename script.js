@@ -71,6 +71,10 @@ function renderGrid (totCells, bombsList){
         //eventListener al click sulla cella
         cell.addEventListener("click", function(){
             const cellIndex = parseInt(this.dataset.indice);
+            //controllo se la cella cliccata è una bomba non faccio nulla
+            if(this.classList.contains("bomb")){
+                return;
+            }
             console.log("cliccato cella" + i);
 
             //controllo se il numero della cella cliccata fa parte della lista bombe
