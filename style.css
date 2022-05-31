@@ -1,7 +1,9 @@
 :root{
     --cell-size: 30px;
 }
-
+body{
+    background-color: #7CFFD2;
+}
 
 
 .grid-container {
@@ -10,7 +12,9 @@
     flex-wrap: wrap;
     width: calc(var(--cell-size) * 8);
     height: calc(var(--cell-size) * 8);
-    box-shadow: inset;
+   
+   
+    
 }
 
 
